@@ -7,24 +7,38 @@ Compatibility
 
 This guide assumes the following hardware and software environment:
 
-    Hardware: Raspberry Pi 5 Model B Rev 1.0
-    Operating System: Debian GNU/Linux 12 (bookworm)
-    Kernel: Linux 6.6.20+rpt-rpi-v8
-    Architecture: arm64
-    Waveshare Thermal Camera: HAT long-wave IR thermal imaging camera modules with the 40PIN GPIO header with 80(H)×62(V) temperature measuring pixels
-    Virtual Environment: While the original instructions use a Python virtual environment, this guide will use conda. Ensure you have miniconda installed on your Raspberry Pi.
+Hardware: Raspberry Pi 5 Model B Rev 1.0
+Operating System: Debian GNU/Linux 12 (bookworm)
+Kernel: Linux 6.6.20+rpt-rpi-v8
+Architecture: arm64
+Waveshare Thermal Camera: HAT long-wave IR thermal imaging camera modules with the 40PIN GPIO header with 80(H)×62(V) temperature measuring pixels
+Virtual Environment: While the original instructions use a Python virtual environment, this guide will use conda. Ensure you have miniconda installed on your Raspberry Pi.
 
 Setting Up the Virtual Environment
 
-'''
 
-conda create --name myenv -c conda-forge python=3.11
-conda activate myenv
+    conda create --name myenv -c conda-forge python=3.11
+    conda activate myenv
 
-'''
 
 This creates a conda environment named myenv with Python 3.11.  We will activate this environment throughout the guide for managing dependencies.
 
 Next Steps
 
-The guide will continue with detailed instructions on installation, configuration, and using the Waveshare Thermal Camera with your Raspberry Pi 5.
+pull the github or manually install requiments.txt in new environment
+
+    pip install -r requirements.txt
+
+Install Demo
+
+    unzip Pysenxor-master.zip
+    cd pysenxor-master/
+
+    python setup.py install
+
+
+    cd example
+    python stream_spi.py
+
+
+Note the changes in requirements file from original https://www.waveshare.com/wiki/Thermal_Camera_HAT#Thermal_Camera_HAT as well as no longer running in sudo
